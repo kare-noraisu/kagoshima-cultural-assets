@@ -21,7 +21,7 @@ def main():
         with col3:
             selected_value=st.selectbox('Filter by:',unique_values_in_column)
             df=df[df[filter_column]==selected_value]
-        st.write(df)
+        st.dataframe(df,use_container_width=True)
     elif page == "Map View":
         st.header("Map View")
         geolocator=Photon(user_agent="geoapiExerclses")
