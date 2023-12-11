@@ -28,9 +28,9 @@ def main():
         loc=get_geolocation()
         if loc is not None:
             loc=loc['coords']
-            map=folium.Map(tiles="stamentoner",location=[loc["latitude"],loc["longitude"]],zoom_start=15)
+            map=folium.Map(location=[loc["latitude"],loc["longitude"]],zoom_start=15)
         else:
-            map=folium.Map(tiles="stamentoner",location=[31.5965,130.5571],zoom_start=10)
+            map=folium.Map(location=[31.5965,130.5571],zoom_start=10)
         df=pd.read_csv('data.csv')
         for idx,row in df.iterrows():
             if row["Latitude"]!="Not Found":
